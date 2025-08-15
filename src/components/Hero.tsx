@@ -25,15 +25,15 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-between relative overflow-hidden pt-8 pb-8">
+    <section id="home" className="min-h-screen flex flex-col justify-between relative overflow-hidden pt-4 sm:pt-8 pb-8">
       <div className="container mx-auto px-6 text-center relative z-10 flex-grow flex flex-col justify-center">
         <div className={`transform transition-all duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div className="relative">
-            <div className="relative mb-8 pt-8 sm:pt-8 md:pt-0">
+            <div className="relative mb-8 pt-4 sm:pt-8 md:pt-0">
               <GradientText 
-                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight animate-title-float"
+                className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight animate-title-float"
                 animationSpeed={7.5}
                 showBorder={false}
               >

@@ -152,12 +152,15 @@ const Navigation = () => {
               }`
         }`}>
           {isHeroSection ? (
-            <div className="flex items-center justify-center space-x-2 overflow-hidden w-full h-full">
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="flex items-center justify-center space-x-2 overflow-hidden w-full h-full hover:scale-105 transition-transform duration-300"
+            >
               <Menu className="w-5 h-5 text-primary flex-shrink-0" />
               <span className="text-primary font-bold text-sm whitespace-nowrap transition-opacity duration-300">
                 Menu
               </span>
-            </div>
+            </button>
           ) : (
             <div className="flex items-center relative">
               {/* Sliding rounded highlight */}
@@ -209,6 +212,41 @@ const Navigation = () => {
             </div>
           )}
         </div>
+        
+        {/* Desktop Menu Dropdown when in hero section */}
+        {isHeroSection && isMobileMenuOpen && (
+          <div className="absolute top-full right-0 mt-2 w-56 bg-slate-900/95 backdrop-blur-md border border-slate-700/50 rounded-xl shadow-xl overflow-hidden">
+            <button
+              onClick={() => {
+                handleHomeClick();
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full text-left px-4 py-3 text-white hover:bg-primary/20 hover:text-primary transition-colors"
+            >
+              About Me
+            </button>
+            {[
+              { name: 'Education', action: () => scrollToSection('education') },
+              { name: 'Experience', action: () => scrollToSection('experience') },
+              { name: 'Case Comp', action: () => scrollToSection('case-comp') },
+              { name: 'Community', action: () => scrollToSection('community') },
+              { name: 'Skills', action: () => scrollToSection('skills') },
+              { name: 'Projects', action: () => navigate('/projects') },
+              { name: 'Awards', action: () => navigate('/awards') }
+            ].map((item) => (
+              <button
+                key={item.name}
+                onClick={() => {
+                  item.action();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full text-left px-4 py-3 text-white hover:bg-primary/20 hover:text-primary transition-colors"
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+        )}
       </nav>
 
       {/* Mobile Navigation */}
