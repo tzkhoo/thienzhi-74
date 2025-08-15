@@ -376,9 +376,9 @@ class App {
     this.onResize();
     this.createGeometry();
     this.createMedias(items, bend, borderRadius, textColor, font);
-    // Start positioned one item to the left to show previous images
+    // Start positioned 2 items to the right from original position
     const firstWidth = (this.medias[0] as any).width;
-    this.scroll.current = this.scroll.target = firstWidth * (this.galleryLength - 1);
+    this.scroll.current = this.scroll.target = firstWidth * (this.galleryLength - 1 + 2);
     this.update();
     this.addEventListeners();
   }
