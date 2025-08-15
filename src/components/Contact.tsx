@@ -16,7 +16,7 @@ const Contact = () => {
             handle="thienzhi_"
             status="Online"
             contactText="Contact Me"
-            avatarUrl="/thienzhi.png"
+            avatarUrl="/thienzhicard.png"
             showUserInfo={true}
             enableTilt={true}
             enableMobileTilt={true}
