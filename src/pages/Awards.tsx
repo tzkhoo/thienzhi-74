@@ -11,6 +11,12 @@ const AwardsPage = () => {
     // Handle local asset paths
     if (imagePath.includes('Karkaram.jpg')) return KarkaramImg;
     if (imagePath.includes('Kiran.png')) return KiranImg;
+    // Handle awards images
+    if (imagePath.includes('awards1.png')) return '/awards1.png';
+    if (imagePath.includes('awards2.png')) return '/awards2.png';
+    if (imagePath.includes('awards3.png')) return '/awards3.png';
+    if (imagePath.includes('awards4.png')) return '/awards4.png';
+    if (imagePath.includes('awards5.png')) return '/awards5.png';
     // Return external URLs as-is
     return imagePath;
   };

@@ -17,6 +17,12 @@ const Projects = () => {
     if (imagePath.includes('bochk.jpg')) return BochkImg;
     if (imagePath.includes('bnp.jpg')) return BnpImg;
     if (imagePath.includes('ow.jpg')) return OwImg;
+    // Handle awards images
+    if (imagePath.includes('awards1.png')) return '/awards1.png';
+    if (imagePath.includes('awards2.png')) return '/awards2.png';
+    if (imagePath.includes('awards3.png')) return '/awards3.png';
+    if (imagePath.includes('awards4.png')) return '/awards4.png';
+    if (imagePath.includes('awards5.png')) return '/awards5.png';
     // Return external URLs as-is
     return imagePath;
   };
